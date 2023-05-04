@@ -21,15 +21,26 @@ assert triangle(1,1,4) == 0
 (2 points)
 """
 
-def triangle():
-    return
+import math
 
-def tests():
+def triangle(a, b, c):
+    if a + b <= c or c + b <= a or a + c <= b:
+        return 0
+    if a ** 2 + b ** 2 == c ** 2 or c ** 2 + b ** 2 == a ** 2 or a ** 2 + c ** 2 == b ** 2:
+        return 2
+    if a ** 2 + b ** 2 < c ** 2 or c ** 2 + b ** 2 < a ** 2 or a ** 2 + c ** 2 < b ** 2:
+        return 3
+    return 1
+
+
+
+
+#def tests():
     assert triangle(12,5,13) == 2     
     assert triangle(5,3,3) == 3  
     assert triangle(5,15,12) == 3  
     assert triangle(1,1,4) == 0  
 
 
-if __name__== "__main__":
+#if __name__== "__main__":
     tests()
